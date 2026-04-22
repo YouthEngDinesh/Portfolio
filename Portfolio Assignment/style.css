@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+header h1,
+header p {
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+main {
+  padding-bottom: 40px;
+}
+
+.profile-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+  width: 180px;
+  max-width: 100%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-table {
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-table th,
+.profile-table td {
+  border: 1px solid #e1e8ed;
+  transition: background-color 0.3s ease;
+}
+
+.profile-table th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-weight: 600;
+  color: #495057;
+}
+
+.profile-table td {
+  background-color: #ffffff;
+}
+
+.profile-table tr:hover td {
+  background-color: #f8f9ff;
+}
+
+h2 {
+  color: #343a40;
+  margin-top: 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.table-borderless tbody tr td,
+.table-borderless tbody tr th {
+  padding: 0.5rem 0;
+}
+
+ul {
+  margin-top: 0.5rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a.btn {
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+nav a.btn:hover::before {
+  left: 100%;
+}
+
+nav a.btn:hover,
+nav a.btn:focus {
+  background-color: #212529;
+  box-shadow: 0 10px 20px rgba(52, 58, 64, 0.3);
+  transform: translateY(-2px);
+}
+
+nav a.btn:active {
+  transform: translateY(0);
+}
+
+footer {
+  color: #6c757d;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 1px;
+}
+
+@media (max-width: 575.98px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-image {
+    width: 140px;
+  }
+
+  nav a.btn {
+    display: block;
+    width: 100%;
+    margin: 0 auto 0.75rem;
+  }
+
+  .profile-card::before {
+    height: 3px;
+  }
+}
